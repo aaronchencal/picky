@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>356110591807-igakge6fmn22u7ddqdoh8ugdpqsqapmq.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.356110591807-igakge6fmn22u7ddqdoh8ugdpqsqapmq</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBL5UOfbV0_B8RlF_UCV0HvyzhOg6AJXHo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>356110591807</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ACDev.Picky</string>
+	<key>PROJECT_ID</key>
+	<string>picky-app</string>
+	<key>STORAGE_BUCKET</key>
+	<string>picky-app.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:356110591807:ios:5adf1171954f8a57</string>
+	<key>DATABASE_URL</key>
+	<string>https://picky-app.firebaseio.com</string>
+</dict>
+</plist>
