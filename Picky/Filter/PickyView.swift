@@ -10,12 +10,15 @@ import UIKit
 
 class PickyView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
+    
+//    func setTestLabel(data: FilterData) {
+//        var str = ""
+//        for idx in 0..<data.count {
+//            let fItem = data.getFilterItemAt(index: idx)
+//            if fItem.checked {
+//                str += fItem.name
+//            }
+//        }
+//        testLabel.text = str
+//    }
 }

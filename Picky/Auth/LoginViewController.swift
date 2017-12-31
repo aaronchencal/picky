@@ -8,11 +8,15 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
+import GoogleSignIn
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
     
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    
+    private var googleDelegate : GoogleDelegate!
     
     @IBAction func login(_ sender: UIButton) {
         guard let estring = emailField.text else {
@@ -24,22 +28,42 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             return
         }
         Auth.auth().signIn(withEmail: estring, password: pstring) { (user, error) in
-            
+            if let err = error as NSError? {
+                guard let err = AuthErrorCode(rawValue: err.code) else {
+                    print("Unkown error logging in")
+                    return
+                }
+                switch err {
+                case .invalidEmail:
+                    print("invalid email")
+                default:
+                    print("Firebase error you didn't handle")
+                }
+            } else {
+                //login successful
+            }
         }
     }
 
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        googleDelegate = GoogleDelegate(parentController: self, id: "logintofilter")
+        GIDSignIn.sharedInstance().delegate = googleDelegate
+        GIDSignIn.sharedInstance().uiDelegate = self
+        emailField.useUnderline()
+        passwordField.useUnderline()
+    }
+    
+    
     func verifyEmail(emailString : String) -> Bool {
         return true
     }
     func verifyPassword(passwordString: String) -> Bool {
         return true
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
+  
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

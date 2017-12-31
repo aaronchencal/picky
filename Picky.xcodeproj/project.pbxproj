@@ -7,17 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A700C4F21FF798BB0001A777 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A700C4F11FF798BB0001A777 /* Extensions.swift */; };
+		A7313B191FF7261C00C35460 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7313B181FF7261C00C35460 /* SignupViewController.swift */; };
+		A7313B1D1FF7455E00C35460 /* FoodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7313B1C1FF7455E00C35460 /* FoodTableViewController.swift */; };
+		A73412D91FF70F2A0074777C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73412D81FF70F2A0074777C /* LoginViewController.swift */; };
+		A75E20591FF75A5300524EC5 /* GoogleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75E20581FF75A5300524EC5 /* GoogleDelegate.swift */; };
+		A7BC05A81FF882C600905C89 /* FilterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BC05A71FF882C600905C89 /* FilterData.swift */; };
+		A7BC05AA1FF8A93000905C89 /* PickyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BC05A91FF8A93000905C89 /* PickyViewController.swift */; };
+		A7BC05AC1FF8AD8400905C89 /* PickyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BC05AB1FF8AD8400905C89 /* PickyView.swift */; };
+		A7C567FF1FF702D200BB47C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A7C567FE1FF702D200BB47C8 /* GoogleService-Info.plist */; };
 		A7E338FF1FEDFAF60095C913 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E338FE1FEDFAF60095C913 /* AppDelegate.swift */; };
-		A7E339011FEDFAF60095C913 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E339001FEDFAF60095C913 /* ViewController.swift */; };
+		A7E339011FEDFAF60095C913 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E339001FEDFAF60095C913 /* LaunchViewController.swift */; };
 		A7E339041FEDFAF60095C913 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7E339021FEDFAF60095C913 /* Main.storyboard */; };
 		A7E339061FEDFAF60095C913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7E339051FEDFAF60095C913 /* Assets.xcassets */; };
 		A7E339091FEDFAF60095C913 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7E339071FEDFAF60095C913 /* LaunchScreen.storyboard */; };
+		B56A7DA11BE08529BAE0354A /* Pods_Picky.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1303C1B20B31566A3CCE66FB /* Pods_Picky.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1303C1B20B31566A3CCE66FB /* Pods_Picky.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Picky.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B81A3A8EE40FCEEDF4498A9 /* Pods-Picky.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Picky.release.xcconfig"; path = "Pods/Target Support Files/Pods-Picky/Pods-Picky.release.xcconfig"; sourceTree = "<group>"; };
+		59B23F115565B4F1C6D4C75D /* Pods-Picky.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Picky.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Picky/Pods-Picky.debug.xcconfig"; sourceTree = "<group>"; };
+		A700C4F11FF798BB0001A777 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A7313B181FF7261C00C35460 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		A7313B1C1FF7455E00C35460 /* FoodTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewController.swift; sourceTree = "<group>"; };
+		A73412D81FF70F2A0074777C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A75E20581FF75A5300524EC5 /* GoogleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleDelegate.swift; sourceTree = "<group>"; };
+		A7BC05A71FF882C600905C89 /* FilterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterData.swift; sourceTree = "<group>"; };
+		A7BC05A91FF8A93000905C89 /* PickyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickyViewController.swift; sourceTree = "<group>"; };
+		A7BC05AB1FF8AD8400905C89 /* PickyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickyView.swift; sourceTree = "<group>"; };
+		A7C567FE1FF702D200BB47C8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A7E338FB1FEDFAF60095C913 /* Picky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Picky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7E338FE1FEDFAF60095C913 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A7E339001FEDFAF60095C913 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A7E339001FEDFAF60095C913 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		A7E339031FEDFAF60095C913 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A7E339051FEDFAF60095C913 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7E339081FEDFAF60095C913 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -29,17 +51,51 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B56A7DA11BE08529BAE0354A /* Pods_Picky.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		921C178783924066C01E0924 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				59B23F115565B4F1C6D4C75D /* Pods-Picky.debug.xcconfig */,
+				1B81A3A8EE40FCEEDF4498A9 /* Pods-Picky.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A7313B1A1FF7262F00C35460 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				A7E339001FEDFAF60095C913 /* LaunchViewController.swift */,
+				A73412D81FF70F2A0074777C /* LoginViewController.swift */,
+				A7313B181FF7261C00C35460 /* SignupViewController.swift */,
+				A75E20581FF75A5300524EC5 /* GoogleDelegate.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		A7313B1B1FF744FC00C35460 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				A7313B1C1FF7455E00C35460 /* FoodTableViewController.swift */,
+				A7BC05A71FF882C600905C89 /* FilterData.swift */,
+				A7BC05A91FF8A93000905C89 /* PickyViewController.swift */,
+				A7BC05AB1FF8AD8400905C89 /* PickyView.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
 		A7E338F21FEDFAF60095C913 = {
 			isa = PBXGroup;
 			children = (
 				A7E338FD1FEDFAF60095C913 /* Picky */,
 				A7E338FC1FEDFAF60095C913 /* Products */,
+				921C178783924066C01E0924 /* Pods */,
+				F2EFA164F72428B1ABA7E96E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +111,24 @@
 			isa = PBXGroup;
 			children = (
 				A7E338FE1FEDFAF60095C913 /* AppDelegate.swift */,
-				A7E339001FEDFAF60095C913 /* ViewController.swift */,
+				A700C4F11FF798BB0001A777 /* Extensions.swift */,
+				A7313B1A1FF7262F00C35460 /* Auth */,
+				A7313B1B1FF744FC00C35460 /* Filter */,
 				A7E339021FEDFAF60095C913 /* Main.storyboard */,
 				A7E339051FEDFAF60095C913 /* Assets.xcassets */,
 				A7E339071FEDFAF60095C913 /* LaunchScreen.storyboard */,
 				A7E3390A1FEDFAF60095C913 /* Info.plist */,
+				A7C567FE1FF702D200BB47C8 /* GoogleService-Info.plist */,
 			);
 			path = Picky;
+			sourceTree = "<group>";
+		};
+		F2EFA164F72428B1ABA7E96E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1303C1B20B31566A3CCE66FB /* Pods_Picky.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +138,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7E3390D1FEDFAF60095C913 /* Build configuration list for PBXNativeTarget "Picky" */;
 			buildPhases = (
+				259717E598AE75A46213023C /* [CP] Check Pods Manifest.lock */,
 				A7E338F71FEDFAF60095C913 /* Sources */,
 				A7E338F81FEDFAF60095C913 /* Frameworks */,
 				A7E338F91FEDFAF60095C913 /* Resources */,
+				ABB7250FA19A52BDC47B9D38 /* [CP] Embed Pods Frameworks */,
+				3C0F46E217A2CC9C6BF17303 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7E339091FEDFAF60095C913 /* LaunchScreen.storyboard in Resources */,
+				A7C567FF1FF702D200BB47C8 /* GoogleService-Info.plist in Resources */,
 				A7E339061FEDFAF60095C913 /* Assets.xcassets in Resources */,
 				A7E339041FEDFAF60095C913 /* Main.storyboard in Resources */,
 			);
@@ -131,13 +202,84 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		259717E598AE75A46213023C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Picky-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3C0F46E217A2CC9C6BF17303 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Picky/Pods-Picky-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Picky/Pods-Picky-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABB7250FA19A52BDC47B9D38 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Picky/Pods-Picky-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Picky/Pods-Picky-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A7E338F71FEDFAF60095C913 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7E339011FEDFAF60095C913 /* ViewController.swift in Sources */,
+				A73412D91FF70F2A0074777C /* LoginViewController.swift in Sources */,
+				A7BC05AA1FF8A93000905C89 /* PickyViewController.swift in Sources */,
+				A7E339011FEDFAF60095C913 /* LaunchViewController.swift in Sources */,
+				A7313B1D1FF7455E00C35460 /* FoodTableViewController.swift in Sources */,
+				A7BC05A81FF882C600905C89 /* FilterData.swift in Sources */,
+				A75E20591FF75A5300524EC5 /* GoogleDelegate.swift in Sources */,
+				A7313B191FF7261C00C35460 /* SignupViewController.swift in Sources */,
+				A7BC05AC1FF8AD8400905C89 /* PickyView.swift in Sources */,
 				A7E338FF1FEDFAF60095C913 /* AppDelegate.swift in Sources */,
+				A700C4F21FF798BB0001A777 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +414,7 @@
 		};
 		A7E3390E1FEDFAF60095C913 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59B23F115565B4F1C6D4C75D /* Pods-Picky.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +430,7 @@
 		};
 		A7E3390F1FEDFAF60095C913 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B81A3A8EE40FCEEDF4498A9 /* Pods-Picky.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
