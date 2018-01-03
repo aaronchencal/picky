@@ -12,6 +12,8 @@
 		A7313B1D1FF7455E00C35460 /* FoodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7313B1C1FF7455E00C35460 /* FoodTableViewController.swift */; };
 		A73412D91FF70F2A0074777C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73412D81FF70F2A0074777C /* LoginViewController.swift */; };
 		A75E20591FF75A5300524EC5 /* GoogleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75E20581FF75A5300524EC5 /* GoogleDelegate.swift */; };
+		A779A7B21FF9CA040093CB51 /* HighlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A779A7B11FF9CA040093CB51 /* HighlightButton.swift */; };
+		A779A7B41FF9D0680093CB51 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A779A7B31FF9D0680093CB51 /* RestaurantViewController.swift */; };
 		A7BC05A81FF882C600905C89 /* FilterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BC05A71FF882C600905C89 /* FilterData.swift */; };
 		A7BC05AA1FF8A93000905C89 /* PickyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BC05A91FF8A93000905C89 /* PickyViewController.swift */; };
 		A7BC05AC1FF8AD8400905C89 /* PickyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BC05AB1FF8AD8400905C89 /* PickyView.swift */; };
@@ -21,6 +23,7 @@
 		A7E339041FEDFAF60095C913 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7E339021FEDFAF60095C913 /* Main.storyboard */; };
 		A7E339061FEDFAF60095C913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7E339051FEDFAF60095C913 /* Assets.xcassets */; };
 		A7E339091FEDFAF60095C913 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7E339071FEDFAF60095C913 /* LaunchScreen.storyboard */; };
+		A7EDF52A1FFCAF87008F99E5 /* YelpData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EDF5291FFCAF87008F99E5 /* YelpData.swift */; };
 		B56A7DA11BE08529BAE0354A /* Pods_Picky.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1303C1B20B31566A3CCE66FB /* Pods_Picky.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +36,8 @@
 		A7313B1C1FF7455E00C35460 /* FoodTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewController.swift; sourceTree = "<group>"; };
 		A73412D81FF70F2A0074777C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A75E20581FF75A5300524EC5 /* GoogleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleDelegate.swift; sourceTree = "<group>"; };
+		A779A7B11FF9CA040093CB51 /* HighlightButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightButton.swift; sourceTree = "<group>"; };
+		A779A7B31FF9D0680093CB51 /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
 		A7BC05A71FF882C600905C89 /* FilterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterData.swift; sourceTree = "<group>"; };
 		A7BC05A91FF8A93000905C89 /* PickyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickyViewController.swift; sourceTree = "<group>"; };
 		A7BC05AB1FF8AD8400905C89 /* PickyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickyView.swift; sourceTree = "<group>"; };
@@ -44,6 +49,7 @@
 		A7E339051FEDFAF60095C913 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7E339081FEDFAF60095C913 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7E3390A1FEDFAF60095C913 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7EDF5291FFCAF87008F99E5 /* YelpData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +91,18 @@
 				A7BC05A71FF882C600905C89 /* FilterData.swift */,
 				A7BC05A91FF8A93000905C89 /* PickyViewController.swift */,
 				A7BC05AB1FF8AD8400905C89 /* PickyView.swift */,
+				A779A7B11FF9CA040093CB51 /* HighlightButton.swift */,
 			);
 			path = Filter;
+			sourceTree = "<group>";
+		};
+		A779A7B51FF9D61B0093CB51 /* Restaurant */ = {
+			isa = PBXGroup;
+			children = (
+				A779A7B31FF9D0680093CB51 /* RestaurantViewController.swift */,
+				A7EDF5291FFCAF87008F99E5 /* YelpData.swift */,
+			);
+			path = Restaurant;
 			sourceTree = "<group>";
 		};
 		A7E338F21FEDFAF60095C913 = {
@@ -114,6 +130,7 @@
 				A700C4F11FF798BB0001A777 /* Extensions.swift */,
 				A7313B1A1FF7262F00C35460 /* Auth */,
 				A7313B1B1FF744FC00C35460 /* Filter */,
+				A779A7B51FF9D61B0093CB51 /* Restaurant */,
 				A7E339021FEDFAF60095C913 /* Main.storyboard */,
 				A7E339051FEDFAF60095C913 /* Assets.xcassets */,
 				A7E339071FEDFAF60095C913 /* LaunchScreen.storyboard */,
@@ -246,16 +263,20 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Picky/Pods-Picky-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +292,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A73412D91FF70F2A0074777C /* LoginViewController.swift in Sources */,
+				A7EDF52A1FFCAF87008F99E5 /* YelpData.swift in Sources */,
+				A779A7B41FF9D0680093CB51 /* RestaurantViewController.swift in Sources */,
 				A7BC05AA1FF8A93000905C89 /* PickyViewController.swift in Sources */,
 				A7E339011FEDFAF60095C913 /* LaunchViewController.swift in Sources */,
 				A7313B1D1FF7455E00C35460 /* FoodTableViewController.swift in Sources */,
@@ -279,6 +302,7 @@
 				A7313B191FF7261C00C35460 /* SignupViewController.swift in Sources */,
 				A7BC05AC1FF8AD8400905C89 /* PickyView.swift in Sources */,
 				A7E338FF1FEDFAF60095C913 /* AppDelegate.swift in Sources */,
+				A779A7B21FF9CA040093CB51 /* HighlightButton.swift in Sources */,
 				A700C4F21FF798BB0001A777 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

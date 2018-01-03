@@ -14,15 +14,16 @@ import GoogleSignIn
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    
     var window: UIWindow?
+    
+    static var currentUser : User!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
-                print(user!.uid)
+                AppDelegate.currentUser = user
                 self.window = UIWindow(frame: UIScreen.main.bounds)
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let initialViewController = storyboard.instantiateViewController(withIdentifier: "filternav")

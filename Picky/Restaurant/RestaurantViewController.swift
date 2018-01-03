@@ -11,17 +11,13 @@ import UIKit
 class RestaurantViewController: UIViewController {
 
     private var fData: FilterData!
+
+    private var yData: YelpData!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("price: \(fData.price) \n isDriving: \(fData.isDriving)")
-        for index in 0..<fData.count {
-            let fItem = fData.getFilterItemAt(index: index)
-            if fItem.checked {
-                print("\(fItem.name)")
-            }
-        }
         // Do any additional setup after loading the view.
+        print(fData.description)
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,6 +27,8 @@ class RestaurantViewController: UIViewController {
     
     func receiveData(data: FilterData) {
         fData = data
+        fData.persist()
+        yData = YelpData()
     }
 
     /*

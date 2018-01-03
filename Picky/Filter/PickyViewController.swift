@@ -7,18 +7,31 @@
 //
 
 import UIKit
+import CoreLocation
 
-class PickyViewController: UIViewController {
+class PickyViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var navItem: UINavigationItem!
     
     @IBOutlet var pickyView: PickyView!
     
+    var locationManager = CLLocationManager()
+    
     var fData : FilterData!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navItem.hidesBackButton = true
+//        navItem.hidesBackButton = true
         // Do any additional setup after loading the view.
+        pickyView.setDefaults(data: fData)
+        locationManager.delegate = self
+        
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+            CLLocationManager.authorizationStatus() == .authorizedAlways {
+            locationManager.startUpdatingLocation()
+        } else {
+            locationManager.requestWhenInUseAuthorization()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,19 +39,29 @@ class PickyViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            fData.location = location
+            manager.stopUpdatingLocation()
+        }
+    }
+    
     func receiveData(data: FilterData) {
         fData = data
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "pickytorestaurant" {
+            //give a notification if no location services allowed
+            return CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+                CLLocationManager.authorizationStatus() == .authorizedAlways
+        }
+        return true
     }
-    */
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        (fData.isDriving, fData.price) = pickyView.exportFilter()
+        if let dvc = segue.destination as? RestaurantViewController {
+            dvc.receiveData(data: fData)
+        }
+    }
 }

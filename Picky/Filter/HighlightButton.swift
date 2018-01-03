@@ -9,13 +9,24 @@
 import UIKit
 
 class HighlightButton: UIButton {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    
+    var color = UIColor.clear
+    
+    var isPicked = false
+    
+    override func awakeFromNib() {
+        backgroundColor = UIColor.clear
     }
-    */
+    
+    func turnOff() {
+        isPicked = false
+        backgroundColor = UIColor.clear
+    }
+    func turnOn() {
+        isPicked = true
+        backgroundColor = self.color
+    }
+    
+    
 
 }

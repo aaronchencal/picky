@@ -12,7 +12,7 @@ import GoogleSignIn
 
 class FoodTableViewController: UITableViewController {
     
-    let fData = FilterData()
+    var fData : FilterData!
     
     @IBAction func logOut(_ sender: UIBarButtonItem) {
         let firebaseAuth = Auth.auth()
@@ -25,6 +25,7 @@ class FoodTableViewController: UITableViewController {
         self.performSegue(withIdentifier: "logout", sender: self)
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the following line to preserve selection between presentations
@@ -32,8 +33,12 @@ class FoodTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        fData = FilterData()
+        fData.load(view: tableView)
     }
 
+    //google: drive and $$
+    //bill:  walk and $$$ and top two checks
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -58,6 +63,7 @@ class FoodTableViewController: UITableViewController {
         cell.accessoryType = fItem.checked ? .checkmark : .none
         return cell
     }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
