@@ -75,7 +75,7 @@ class FilterData {
                     str  += "\(fItem.name), "
                 }
             }
-            str += "\nLocation: \(locationDescription!)"
+//            str += "\nLocation: \(locationDescription!)"
           
             return str
         }
