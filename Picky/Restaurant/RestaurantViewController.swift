@@ -28,7 +28,7 @@ class RestaurantViewController: UIViewController {
     func receiveData(data: FilterData) {
         fData = data
         fData.persist()
-        yData = YelpData()
+        yData = YelpData(data: fData)
     }
 
     /*
