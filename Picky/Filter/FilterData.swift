@@ -29,7 +29,7 @@ class FilterData {
     
     var databaseRef: DatabaseReference!
     
-    var yelpRestaurants = ["American", "Chinese", "Pizza", "Zimbabwe"]
+    var yelpRestaurants = ["japanese", "american", "mexican", "chinese"]
     
     var data = [FilterItem]()
     
@@ -60,6 +60,36 @@ class FilterData {
     var count : Int {
         get {
             return data.count
+        }
+    }
+    
+    var restaurantString : String {
+        get {
+            var retString = data[0].name
+            for dat in data {
+                if dat.name == data[0].name || dat.checked {
+                    continue
+                }
+                retString += ",\(dat.name)"
+            }
+            print("retstring: \(retString)")
+            return retString
+        }
+    }
+    
+    var parameters: [String: String] {
+        get {
+            var dict = [String: String]()
+            if let loc = self.location {
+                dict["longitude"] = "\(loc.coordinate.longitude)"
+                dict["latitude"] = "\(loc.coordinate.latitude)"
+                dict["price"] = "\(price.rawValue)"
+                dict["radius"] = isDriving ? "16000" : "1600"
+                dict["categories"] = restaurantString
+            } else {
+                print("Error: location not found.")
+            }
+            return dict
         }
     }
     

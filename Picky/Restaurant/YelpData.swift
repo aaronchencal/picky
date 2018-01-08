@@ -34,29 +34,27 @@ class YelpData {
         let url: String
     }
 
-    init(data: FilterData) {
-        Alamofire.request("https://92248ce4.ngrok.io/info", parameters:
-            ["latitude": "37.786882",
-             "longitude" : "-122.399972",
-             "price" : "1",
-             "radius" : "1600",
-             "categories" : "japanese,american,mexican,chinese"
-            ]).responseJSON {
-            response in
-            if let data = response.data {
-                let decoder = JSONDecoder()
-                let restStruct = try! decoder.decode(Restaurant.self, from: data)
-                print(restStruct)
-            }
-//            print(response.result.value)
+    var fData: FilterData!
+    
+    func makeRequest(completion: @escaping (Restaurant?, Bool) -> Void) {
+        Alamofire.request("https://sspicky.vapor.cloud/info", parameters: fData.parameters
+            ).responseJSON {
+                response in
+                if let data = response.data {
+                    let decoder = JSONDecoder()
+                    do {
+                        let restStruct = try decoder.decode(Restaurant.self, from: data)
+                        completion(restStruct, true)
+                    } catch {
+                        print("Error: \(error)")
+                    }
+                }
+                completion(nil, false)
         }
-        
-//        Alamofire.request(search, headers: headers).responseJSON { response in
-//            if let json = response.result.value {
-//                print("JSON: \(json)")
-//            }
-//        }
-        
+    }
+    
+    init(data: FilterData) {
+        fData = data
     }
     
 }

@@ -10,14 +10,20 @@ import UIKit
 
 class RestaurantViewController: UIViewController {
 
-    private var fData: FilterData!
-
-    private var yData: YelpData!
+    private var yData: YelpData.Restaurant!
+    
+    
+    @IBOutlet weak var tempLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print(fData.description)
+        tempLabel.text =
+        """
+        name: \(yData.name)\n
+        place: \(yData.location.display_address)\n
+        category: \(yData.rating)
+        """
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,10 +31,9 @@ class RestaurantViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func receiveData(data: FilterData) {
-        fData = data
-        fData.persist()
-        yData = YelpData(data: fData)
+    func receiveData(data: YelpData.Restaurant) {
+            yData = data
+            print(yData)
     }
 
     /*

@@ -273,7 +273,7 @@
                                     <color key="titleColor" red="0.98942453904904948" green="1" blue="0.94453406017841635" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="mcx-sV-J5g" kind="show" identifier="pickytorestaurant" id="CxJ-S6-afF"/>
+                                    <action selector="pressedPick:" destination="dEx-Q1-qy0" eventType="touchUpInside" id="FaM-dG-1HM"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIT-7s-wkw">
@@ -314,6 +314,7 @@
                     <connections>
                         <outlet property="navItem" destination="f9K-nu-hIP" id="Wu5-co-wGm"/>
                         <outlet property="pickyView" destination="3Jg-a9-lsB" id="Rpw-Ik-yyQ"/>
+                        <segue destination="mcx-sV-J5g" kind="show" identifier="pickytorestaurant" id="bFP-wg-0TL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gZz-Ha-bCG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -327,13 +328,25 @@
                     <view key="view" contentMode="scaleToFill" id="UEU-3w-x7a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="label here" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0V-jM-gVD">
+                                <rect key="frame" x="68" y="169" width="238" height="328"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="sTL-zw-NRM"/>
                     </view>
+                    <connections>
+                        <outlet property="tempLabel" destination="F0V-jM-gVD" id="VYM-ar-gpL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kpb-Yo-PdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4838" y="-370"/>
+            <point key="canvasLocation" x="4837.6000000000004" y="-370.16491754122939"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Xxy-92-vp7">

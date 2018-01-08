@@ -19,6 +19,22 @@ class PickyViewController: UIViewController, CLLocationManagerDelegate {
     
     var fData : FilterData!
     
+    private var restData : YelpData.Restaurant!
+    
+    @IBAction func pressedPick(_ sender: UIButton) {
+        (fData.isDriving, fData.price) = pickyView.exportFilter()
+        fData.persist()
+        let yData = YelpData(data: fData)
+        //spinner()
+        yData.makeRequest(completion: goSegueCompletion)
+    }
+    
+    func goSegueCompletion(rest: YelpData.Restaurant?, success: Bool) {
+        if success {
+            restData = rest
+            performSegue(withIdentifier: "pickytorestaurant", sender: self)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 //        navItem.hidesBackButton = true
@@ -30,7 +46,7 @@ class PickyViewController: UIViewController, CLLocationManagerDelegate {
             CLLocationManager.authorizationStatus() == .authorizedAlways {
             locationManager.startUpdatingLocation()
         } else {
-            locationManager.requestWhenInUseAuthorization()
+        locationManager.requestWhenInUseAuthorization()
         }
     }
 
@@ -59,9 +75,8 @@ class PickyViewController: UIViewController, CLLocationManagerDelegate {
         return true
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        (fData.isDriving, fData.price) = pickyView.exportFilter()
         if let dvc = segue.destination as? RestaurantViewController {
-            dvc.receiveData(data: fData)
+            dvc.receiveData(data: restData)
         }
     }
 }
