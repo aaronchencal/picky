@@ -57,13 +57,21 @@ class FoodTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "filterCell", for: indexPath)
         let fItem = fData.getFilterItemAt(index: indexPath.row)
         cell.textLabel?.text = fItem.name
-        cell.accessoryType = fItem.checked ? .checkmark : .none
+        if fItem.checked {
+            cell.textLabel?.textColor = UIColor.lightGray
+            let attritext = NSMutableAttributedString(string: (cell.textLabel?.text)!)
+            attritext.addAttribute(.strikethroughStyle, value: 2, range: NSMakeRange(0, attritext.length))
+            cell.textLabel?.attributedText = attritext
+        } else {
+            cell.textLabel?.textColor = UIColor.black
+        }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "filterCell", for: indexPath)
+    
         if indexPath.row < fData.count
         {
             let fItem = fData.getFilterItemAt(index: indexPath.row)
