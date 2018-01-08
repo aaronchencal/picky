@@ -121,34 +121,35 @@ class FilterData {
         }
     }
 
-    func load(view: UITableView) {
+    func load(completion: @escaping () -> Void) {
         let user = AppDelegate.currentUser!
         databaseRef.child("users").child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             if snapshot.exists() {
-            let value = snapshot.value as! NSDictionary
-            self.isDriving = (value["isdriving"] as! Int) == 1 ? true : false
-            let restaurants = value["restaurants"] as! NSArray
-            let pric = (value["price"] as! Int)
-            self.checkAll()
-            for item in self.data {
-                for rest in restaurants {
-                    if item.name == rest as! String{
-                        item.checked = false
-                        break
+                let value = snapshot.value as! NSDictionary
+                self.isDriving = (value["isdriving"] as! Int) == 1 ? true : false
+                let restaurants = value["restaurants"] as! NSArray
+                let pric = (value["price"] as! Int)
+                self.checkAll()
+                for item in self.data {
+                    for rest in restaurants {
+                        if item.name == rest as! String{
+                            item.checked = false
+                            break
+                        }
                     }
                 }
+                switch pric {
+                case 1: self.price = Price.cheap
+                case 2: self.price = Price.medium
+                case 3: self.price = Price.expensive
+                default: self.price = Price.cheap
+                }
             }
-            switch pric {
-            case 1: self.price = Price.cheap
-            case 2: self.price = Price.medium
-            case 3: self.price = Price.expensive
-            default: self.price = Price.cheap
-            }
-            }
-            view.reloadData()
+            completion()
             // ...
         }) { (error) in
+            completion()
             print(error.localizedDescription)
         }
     }

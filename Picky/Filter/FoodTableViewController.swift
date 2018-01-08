@@ -33,10 +33,7 @@ class FoodTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        fData = FilterData()
-        fData.load(view: tableView)
     }
-
     //google: drive and $$
     //bill:  walk and $$$ and top two checks
     override func didReceiveMemoryWarning() {

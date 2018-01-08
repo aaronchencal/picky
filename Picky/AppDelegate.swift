@@ -24,9 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
                 AppDelegate.currentUser = user
-                self.window = UIWindow(frame: UIScreen.main.bounds)
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let initialViewController = storyboard.instantiateViewController(withIdentifier: "filternav")
+                let initialViewController = storyboard.instantiateViewController(withIdentifier: "loading")
+                self.window = UIWindow(frame: UIScreen.main.bounds)
                 self.window?.rootViewController = initialViewController
                 self.window?.makeKeyAndVisible()
             } else {

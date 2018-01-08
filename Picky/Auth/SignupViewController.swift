@@ -37,7 +37,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
                 case .invalidEmail:
                     print("invalid email")
                 default:
-                    print("Firebase error you didn't handle: \(error!   .localizedDescription)")
+                    print("Firebase error you didn't handle: \(error!.localizedDescription)")
                 }
             } else {
                 //login successful

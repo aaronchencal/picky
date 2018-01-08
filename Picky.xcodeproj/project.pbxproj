@@ -14,6 +14,7 @@
 		A75E20591FF75A5300524EC5 /* GoogleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75E20581FF75A5300524EC5 /* GoogleDelegate.swift */; };
 		A779A7B21FF9CA040093CB51 /* HighlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A779A7B11FF9CA040093CB51 /* HighlightButton.swift */; };
 		A779A7B41FF9D0680093CB51 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A779A7B31FF9D0680093CB51 /* RestaurantViewController.swift */; };
+		A78E59BA20034604000793A3 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78E59B920034604000793A3 /* LoadingViewController.swift */; };
 		A7BC05A81FF882C600905C89 /* FilterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BC05A71FF882C600905C89 /* FilterData.swift */; };
 		A7BC05AA1FF8A93000905C89 /* PickyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BC05A91FF8A93000905C89 /* PickyViewController.swift */; };
 		A7BC05AC1FF8AD8400905C89 /* PickyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BC05AB1FF8AD8400905C89 /* PickyView.swift */; };
@@ -38,6 +39,7 @@
 		A75E20581FF75A5300524EC5 /* GoogleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleDelegate.swift; sourceTree = "<group>"; };
 		A779A7B11FF9CA040093CB51 /* HighlightButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightButton.swift; sourceTree = "<group>"; };
 		A779A7B31FF9D0680093CB51 /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
+		A78E59B920034604000793A3 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		A7BC05A71FF882C600905C89 /* FilterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterData.swift; sourceTree = "<group>"; };
 		A7BC05A91FF8A93000905C89 /* PickyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickyViewController.swift; sourceTree = "<group>"; };
 		A7BC05AB1FF8AD8400905C89 /* PickyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickyView.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				A73412D81FF70F2A0074777C /* LoginViewController.swift */,
 				A7313B181FF7261C00C35460 /* SignupViewController.swift */,
 				A75E20581FF75A5300524EC5 /* GoogleDelegate.swift */,
+				A78E59B920034604000793A3 /* LoadingViewController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				A7E339011FEDFAF60095C913 /* LaunchViewController.swift in Sources */,
 				A7313B1D1FF7455E00C35460 /* FoodTableViewController.swift in Sources */,
 				A7BC05A81FF882C600905C89 /* FilterData.swift in Sources */,
+				A78E59BA20034604000793A3 /* LoadingViewController.swift in Sources */,
 				A75E20591FF75A5300524EC5 /* GoogleDelegate.swift in Sources */,
 				A7313B191FF7261C00C35460 /* SignupViewController.swift in Sources */,
 				A7BC05AC1FF8AD8400905C89 /* PickyView.swift in Sources */,

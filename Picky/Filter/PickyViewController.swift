@@ -13,6 +13,8 @@ class PickyViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var navItem: UINavigationItem!
     
+    @IBOutlet weak var actIndicator: UIActivityIndicatorView!
+    
     @IBOutlet var pickyView: PickyView!
     
     var locationManager = CLLocationManager()
@@ -22,6 +24,7 @@ class PickyViewController: UIViewController, CLLocationManagerDelegate {
     private var restData : YelpData.Restaurant!
     
     @IBAction func pressedPick(_ sender: UIButton) {
+        actIndicator.startAnimating()
         (fData.isDriving, fData.price) = pickyView.exportFilter()
         fData.persist()
         let yData = YelpData(data: fData)
@@ -30,9 +33,12 @@ class PickyViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func goSegueCompletion(rest: YelpData.Restaurant?, success: Bool) {
+        actIndicator.stopAnimating()
         if success {
             restData = rest
             performSegue(withIdentifier: "pickytorestaurant", sender: self)
+        } else {
+            // error message
         }
     }
     override func viewDidLoad() {

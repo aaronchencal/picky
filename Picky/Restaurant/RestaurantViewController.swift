@@ -22,7 +22,7 @@ class RestaurantViewController: UIViewController {
         """
         name: \(yData.name)\n
         place: \(yData.location.display_address)\n
-        category: \(yData.rating)
+        rating: \(yData.rating)
         """
     }
 

@@ -135,6 +135,31 @@
             </objects>
             <point key="canvasLocation" x="1446" y="188"/>
         </scene>
+        <!--Loading View Controller-->
+        <scene sceneID="ho5-Mt-IFE">
+            <objects>
+                <viewController storyboardIdentifier="loading" id="JLg-lC-wGw" customClass="LoadingViewController" customModule="Picky" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rc1-E6-xej">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="LAD-Jx-aDS">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="YLR-Sv-wdi"/>
+                    </view>
+                    <connections>
+                        <outlet property="actIndicator" destination="LAD-Jx-aDS" id="gEo-Gr-neC"/>
+                        <segue destination="X7G-qy-dbn" kind="show" identifier="nav" animates="NO" id="in4-TK-lwo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wsL-gP-NCH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2249" y="-369"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="c0b-xJ-m1k">
             <objects>
@@ -149,7 +174,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CT6-Vr-et1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2353" y="-370"/>
+            <point key="canvasLocation" x="3068" y="-369"/>
         </scene>
         <!--Filter Out Restaurants-->
         <scene sceneID="uyJ-hl-umA">
@@ -203,7 +228,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RnQ-MJ-nu9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3226" y="-370"/>
+            <point key="canvasLocation" x="3940" y="-369"/>
         </scene>
         <!--Picky-->
         <scene sceneID="WVG-RB-GAh">
@@ -297,6 +322,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="3nW-5j-amB">
+                                <rect key="frame" x="320" y="493" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="CAx-Rn-rT5"/>
@@ -312,6 +341,7 @@
                     <navigationItem key="navigationItem" title="Picky" id="f9K-nu-hIP"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="actIndicator" destination="3nW-5j-amB" id="Cdp-Pp-oiQ"/>
                         <outlet property="navItem" destination="f9K-nu-hIP" id="Wu5-co-wGm"/>
                         <outlet property="pickyView" destination="3Jg-a9-lsB" id="Rpw-Ik-yyQ"/>
                         <segue destination="mcx-sV-J5g" kind="show" identifier="pickytorestaurant" id="bFP-wg-0TL"/>
@@ -319,7 +349,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gZz-Ha-bCG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4069.5999999999999" y="-370.16491754122939"/>
+            <point key="canvasLocation" x="4785" y="-369"/>
         </scene>
         <!--Restaurant View Controller-->
         <scene sceneID="TyA-ME-odv">
@@ -329,7 +359,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="label here" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0V-jM-gVD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="label here" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0V-jM-gVD">
                                 <rect key="frame" x="68" y="169" width="238" height="328"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -346,7 +376,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kpb-Yo-PdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4837.6000000000004" y="-370.16491754122939"/>
+            <point key="canvasLocation" x="5553" y="-369"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Xxy-92-vp7">
