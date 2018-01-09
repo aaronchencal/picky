@@ -12,6 +12,9 @@
 		A7313B1D1FF7455E00C35460 /* FoodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7313B1C1FF7455E00C35460 /* FoodTableViewController.swift */; };
 		A73412D91FF70F2A0074777C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73412D81FF70F2A0074777C /* LoginViewController.swift */; };
 		A75E20591FF75A5300524EC5 /* GoogleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75E20581FF75A5300524EC5 /* GoogleDelegate.swift */; };
+		A763490D200499AC00C9EB0F /* BlurButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763490C200499AC00C9EB0F /* BlurButton.swift */; };
+		A763490F2004A7EA00C9EB0F /* Mission-Script.otf in Resources */ = {isa = PBXBuildFile; fileRef = A763490E2004A7D400C9EB0F /* Mission-Script.otf */; };
+		A76349122004AD6E00C9EB0F /* SanFranciscoText-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A76349102004AD6800C9EB0F /* SanFranciscoText-Regular.otf */; };
 		A779A7B21FF9CA040093CB51 /* HighlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A779A7B11FF9CA040093CB51 /* HighlightButton.swift */; };
 		A779A7B41FF9D0680093CB51 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A779A7B31FF9D0680093CB51 /* RestaurantViewController.swift */; };
 		A78E59BA20034604000793A3 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78E59B920034604000793A3 /* LoadingViewController.swift */; };
@@ -37,6 +40,9 @@
 		A7313B1C1FF7455E00C35460 /* FoodTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewController.swift; sourceTree = "<group>"; };
 		A73412D81FF70F2A0074777C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A75E20581FF75A5300524EC5 /* GoogleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleDelegate.swift; sourceTree = "<group>"; };
+		A763490C200499AC00C9EB0F /* BlurButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurButton.swift; sourceTree = "<group>"; };
+		A763490E2004A7D400C9EB0F /* Mission-Script.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mission-Script.otf"; sourceTree = "<group>"; };
+		A76349102004AD6800C9EB0F /* SanFranciscoText-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoText-Regular.otf"; sourceTree = "<group>"; };
 		A779A7B11FF9CA040093CB51 /* HighlightButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightButton.swift; sourceTree = "<group>"; };
 		A779A7B31FF9D0680093CB51 /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
 		A78E59B920034604000793A3 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +89,7 @@
 				A7313B181FF7261C00C35460 /* SignupViewController.swift */,
 				A75E20581FF75A5300524EC5 /* GoogleDelegate.swift */,
 				A78E59B920034604000793A3 /* LoadingViewController.swift */,
+				A763490C200499AC00C9EB0F /* BlurButton.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -129,6 +136,8 @@
 		A7E338FD1FEDFAF60095C913 /* Picky */ = {
 			isa = PBXGroup;
 			children = (
+				A763490E2004A7D400C9EB0F /* Mission-Script.otf */,
+				A76349102004AD6800C9EB0F /* SanFranciscoText-Regular.otf */,
 				A7E338FE1FEDFAF60095C913 /* AppDelegate.swift */,
 				A700C4F11FF798BB0001A777 /* Extensions.swift */,
 				A7313B1A1FF7262F00C35460 /* Auth */,
@@ -213,10 +222,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A763490F2004A7EA00C9EB0F /* Mission-Script.otf in Resources */,
 				A7E339091FEDFAF60095C913 /* LaunchScreen.storyboard in Resources */,
 				A7C567FF1FF702D200BB47C8 /* GoogleService-Info.plist in Resources */,
 				A7E339061FEDFAF60095C913 /* Assets.xcassets in Resources */,
 				A7E339041FEDFAF60095C913 /* Main.storyboard in Resources */,
+				A76349122004AD6E00C9EB0F /* SanFranciscoText-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A73412D91FF70F2A0074777C /* LoginViewController.swift in Sources */,
+				A763490D200499AC00C9EB0F /* BlurButton.swift in Sources */,
 				A7EDF52A1FFCAF87008F99E5 /* YelpData.swift in Sources */,
 				A779A7B41FF9D0680093CB51 /* RestaurantViewController.swift in Sources */,
 				A7BC05AA1FF8A93000905C89 /* PickyViewController.swift in Sources */,

@@ -25,7 +25,6 @@ class FoodTableViewController: UITableViewController {
         self.performSegue(withIdentifier: "logout", sender: self)
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the following line to preserve selection between presentations
@@ -34,12 +33,7 @@ class FoodTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    //google: drive and $$
-    //bill:  walk and $$$ and top two checks
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
 
     // MARK: - Table view data source
 
@@ -79,6 +73,8 @@ class FoodTableViewController: UITableViewController {
             tableView.reloadRows(at: [indexPath], with: .none)
         }
     }
+    
+    //MARK: Segue
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let dvc = segue.destination as? PickyViewController {

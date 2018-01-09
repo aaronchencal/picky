@@ -13,14 +13,12 @@ import GoogleSignIn
 
 class GoogleDelegate : NSObject, GIDSignInDelegate {
     
-    private var parentController: UIViewController!
-    private var id = ""
-    
-    init(parentController: UIViewController, id: String ) {
-        self.parentController = parentController
-        self.id = id
+    override init() {
+        super.init()
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
     }
+
+    
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         // ...
         if let error = error {

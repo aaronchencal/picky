@@ -54,8 +54,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        googleDelegate = GoogleDelegate(parentController: self, id: "signuptofilter")
+        googleDelegate = GoogleDelegate()
         GIDSignIn.sharedInstance().delegate = googleDelegate
         GIDSignIn.sharedInstance().uiDelegate = self
         emailField.useUnderline()

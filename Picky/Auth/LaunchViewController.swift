@@ -14,15 +14,20 @@ class LaunchViewController: UIViewController {
     @IBOutlet var launchView: UIView!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var logInButton: UIButton!
+    @IBOutlet weak var pickyLabel: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         // Transparent navigation bar
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        pickyLabel.layer.shadowOpacity = 0.7
+        pickyLabel.layer.shadowColor = UIColor.black.cgColor
+        pickyLabel.layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
+    self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
     }
