@@ -28,6 +28,7 @@ class PickyViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func pressedPick(_ sender: UIButton) {
         pickButton.isEnabled = false
         actIndicator.startAnimating()
+        
         (fData.isDriving, fData.price) = pickyView.exportFilter()
         fData.persist()
         let yData = YelpData(data: fData)
@@ -48,7 +49,7 @@ class PickyViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        navItem.hidesBackButton = true
-        // Do any additional setup after loading the view.
+        
         pickyView.setDefaults(data: fData)
         locationManager.delegate = self
         

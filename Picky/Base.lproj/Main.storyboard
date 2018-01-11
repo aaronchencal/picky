@@ -342,7 +342,7 @@
             </objects>
             <point key="canvasLocation" x="3068" y="-369"/>
         </scene>
-        <!--Filter-->
+        <!--Cuisine-->
         <scene sceneID="uyJ-hl-umA">
             <objects>
                 <tableViewController id="fQR-Ht-T8P" customClass="FoodTableViewController" customModule="Picky" customModuleProvider="target" sceneMemberID="viewController">
@@ -380,7 +380,8 @@
                             <outlet property="delegate" destination="fQR-Ht-T8P" id="qgG-hc-A9V"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Filter" prompt="Remove anything you hate to eat!" id="rLK-Vr-uFe">
+                    <navigationItem key="navigationItem" title="Cuisine" prompt="Remove anything you hate to eat!" id="rLK-Vr-uFe">
+                        <barButtonItem key="backBarButtonItem" title="Options" id="RlP-Py-WT3"/>
                         <barButtonItem key="leftBarButtonItem" title="Log out" id="pvC-Zk-F56">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -511,11 +512,12 @@
                         </connections>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Picky" id="f9K-nu-hIP"/>
+                    <navigationItem key="navigationItem" title="Picky" id="1Yc-9r-PtX">
+                        <barButtonItem key="backBarButtonItem" title="Picky" id="Q5F-sl-5ao"/>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="actIndicator" destination="3nW-5j-amB" id="Cdp-Pp-oiQ"/>
-                        <outlet property="navItem" destination="f9K-nu-hIP" id="Wu5-co-wGm"/>
                         <outlet property="pickButton" destination="LAV-1f-NBW" id="9bN-Xa-CrF"/>
                         <outlet property="pickyView" destination="3Jg-a9-lsB" id="Rpw-Ik-yyQ"/>
                         <segue destination="mcx-sV-J5g" kind="show" identifier="pickytorestaurant" id="bFP-wg-0TL"/>
@@ -662,7 +664,7 @@
         <image name="launch" width="4623" height="6664"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Iie-wD-72N"/>
+        <segue reference="7Qc-BE-8DA"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

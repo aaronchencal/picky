@@ -17,6 +17,7 @@ class FoodTableViewController: UITableViewController {
     @IBAction func didPressFinished(_ sender: UIBarButtonItem) {
         sender.title = "ff"
         sender.title = "Done"
+        fData.persistRestaurants()
         performSegue(withIdentifier: "foodtofilter", sender: self)
         
     }

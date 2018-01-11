@@ -130,8 +130,9 @@ class FilterData {
                 let value = snapshot.value as! NSDictionary
                 self.isDriving = (value["isdriving"] as! Int) == 1 ? true : false
                 let pric = (value["price"] as! Int)
+                hadRestaurants = true
+                
                 if let restaurants = value["restaurants"] as? NSArray {
-                    hadRestaurants = true
                     self.uncheckAll()
                     for item in self.data {
                         for rest in restaurants {
@@ -141,9 +142,7 @@ class FilterData {
                             }
                         }
                     }
-                } else {
-                    hadRestaurants = false
-                }
+                } 
                 switch pric {
                 case 1: self.price = Price.cheap
                 case 2: self.price = Price.medium
@@ -159,6 +158,16 @@ class FilterData {
         }
     }
     
+    func persistRestaurants() {
+        let user = AppDelegate.currentUser!
+        var arr = [String]()
+        for filterItem in data {
+            if filterItem.checked {
+                arr.append(filterItem.name)
+            }
+        }
+        self.databaseRef.child("users/\(user.uid)/restaurants").setValue(arr)
+    }
     
     func persist() {
         let user = AppDelegate.currentUser!
