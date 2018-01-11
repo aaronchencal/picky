@@ -123,7 +123,7 @@ class FilterData {
 
     func load(completion: @escaping (_: Bool) -> Void) {
         let user = AppDelegate.currentUser!
-        var hadRestaurants = true
+        var hadRestaurants = false
         databaseRef.child("users").child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             if snapshot.exists() {
@@ -131,6 +131,7 @@ class FilterData {
                 self.isDriving = (value["isdriving"] as! Int) == 1 ? true : false
                 let pric = (value["price"] as! Int)
                 if let restaurants = value["restaurants"] as? NSArray {
+                    hadRestaurants = true
                     self.uncheckAll()
                     for item in self.data {
                         for rest in restaurants {

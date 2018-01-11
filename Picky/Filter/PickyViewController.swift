@@ -23,7 +23,10 @@ class PickyViewController: UIViewController, CLLocationManagerDelegate {
     
     private var restData : YelpData.Restaurant!
     
+    @IBOutlet weak var pickButton: UIButton!
+    
     @IBAction func pressedPick(_ sender: UIButton) {
+        pickButton.isEnabled = false
         actIndicator.startAnimating()
         (fData.isDriving, fData.price) = pickyView.exportFilter()
         fData.persist()
@@ -33,6 +36,7 @@ class PickyViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func goSegueCompletion(rest: YelpData.Restaurant?, success: Bool) {
+        pickButton.isEnabled = true
         actIndicator.stopAnimating()
         if success {
             restData = rest

@@ -32,10 +32,8 @@ class LoadingViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "nav" {
             if let navVC = segue.destination as? UINavigationController {
-                if goAhead {
-                    if let childVC = navVC.topViewController as? FoodTableViewController {
-                       childVC.receiveData(filterData: data, goAhead: goAhead)
-                    }
+                if let childVC = navVC.topViewController as? FoodTableViewController {
+                   childVC.receiveData(filterData: data, goAhead: goAhead)
                 }
             }
         }

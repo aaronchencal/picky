@@ -34,7 +34,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i7P-54-Qe5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1362" y="-378"/>
+            <point key="canvasLocation" x="-1316" y="-1291"/>
+        </scene>
+        <!--Primary Loading View Controller-->
+        <scene sceneID="f1I-yt-I5e">
+            <objects>
+                <viewController storyboardIdentifier="loading1" id="ozk-Tk-O08" customClass="PrimaryLoadingViewController" customModule="Picky" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pvt-6T-Heg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="RDz-Xb-WHx">
+                                <rect key="frame" x="177" y="333.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RDz-Xb-WHx" firstAttribute="centerX" secondItem="Pvt-6T-Heg" secondAttribute="centerXWithinMargins" id="9Ed-jz-RLk"/>
+                            <constraint firstItem="RDz-Xb-WHx" firstAttribute="centerY" secondItem="Pvt-6T-Heg" secondAttribute="centerYWithinMargins" id="cSJ-Nh-cpR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8WM-Qt-lDM"/>
+                    </view>
+                    <connections>
+                        <outlet property="spinner" destination="RDz-Xb-WHx" id="ZRe-WB-j0V"/>
+                        <segue destination="cTz-ne-3dr" kind="show" identifier="tomain" animates="NO" id="Iie-wD-72N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r7w-Bf-ieg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1316" y="-369"/>
         </scene>
         <!--start-->
         <scene sceneID="pkE-tG-lYU">
@@ -55,7 +83,7 @@
         <!--Launch View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LaunchViewController" customModule="Picky" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="picky" id="BYZ-38-t0r" customClass="LaunchViewController" customModule="Picky" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -488,6 +516,7 @@
                     <connections>
                         <outlet property="actIndicator" destination="3nW-5j-amB" id="Cdp-Pp-oiQ"/>
                         <outlet property="navItem" destination="f9K-nu-hIP" id="Wu5-co-wGm"/>
+                        <outlet property="pickButton" destination="LAV-1f-NBW" id="9bN-Xa-CrF"/>
                         <outlet property="pickyView" destination="3Jg-a9-lsB" id="Rpw-Ik-yyQ"/>
                         <segue destination="mcx-sV-J5g" kind="show" identifier="pickytorestaurant" id="bFP-wg-0TL"/>
                     </connections>
@@ -632,5 +661,8 @@
     <resources>
         <image name="launch" width="4623" height="6664"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Iie-wD-72N"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

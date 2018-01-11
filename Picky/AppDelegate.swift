@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             } else {
                 print("User is nil")
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let initialViewController = storyboard.instantiateViewController(withIdentifier: "start")
+                let initialViewController = storyboard.instantiateViewController(withIdentifier: "loading1")
                 self.window = UIWindow(frame: UIScreen.main.bounds)
                 self.window?.rootViewController = initialViewController
                 self.window?.makeKeyAndVisible()
