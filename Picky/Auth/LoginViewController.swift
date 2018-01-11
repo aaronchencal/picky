@@ -13,10 +13,14 @@ import GoogleSignIn
 
 class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
     
+    @IBOutlet weak var actIndicator: UIActivityIndicatorView!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
     private var googleDelegate : GoogleDelegate!
+    
+    @IBOutlet var loginView: UIView!
+    
     
     @IBAction func login(_ sender: UIButton) {
         guard let estring = emailField.text else {
@@ -27,10 +31,24 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
             
             return
         }
+        actIndicator.isHidden = false
+        actIndicator.startAnimating()
+        for view in loginView.subviews {
+            if view.tag == 0 {
+                view.isHidden = true
+            }
+        }
         Auth.auth().signIn(withEmail: estring, password: pstring) { (user, error) in
+            self.actIndicator.isHidden = true
+            self.actIndicator.stopAnimating()
+            for view in self.loginView.subviews {
+                if view.tag == 0 {
+                    view.isHidden = false
+                }
+            }
             if let err = error as NSError? {
                 guard let err = AuthErrorCode(rawValue: err.code) else {
-                    print("Unkown error logging in")
+                    print("Unknown error logging in")
                     return
                 }
                 switch err {
@@ -41,6 +59,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
                 }
             } else {
                 //login successful
+            
             }
         }
     }
@@ -48,7 +67,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        googleDelegate = GoogleDelegate()
+        actIndicator.isHidden = true
+        googleDelegate = GoogleDelegate(view: loginView, spinner: actIndicator)
         GIDSignIn.sharedInstance().delegate = googleDelegate
         GIDSignIn.sharedInstance().uiDelegate = self
         emailField.useUnderline()

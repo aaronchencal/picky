@@ -14,6 +14,12 @@ class FoodTableViewController: UITableViewController {
     
     var fData : FilterData!
     
+    @IBAction func didPressFinished(_ sender: UIBarButtonItem) {
+        sender.title = "ff"
+        sender.title = "Done"
+        performSegue(withIdentifier: "foodtofilter", sender: self)
+        
+    }
     @IBAction func logOut(_ sender: UIBarButtonItem) {
         let firebaseAuth = Auth.auth()
         do {
@@ -63,14 +69,21 @@ class FoodTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        let cell = tableView.dequeueReusableCell(withIdentifier: "filterCell", for: indexPath)
-    
+        
         if indexPath.row < fData.count
         {
             let fItem = fData.getFilterItemAt(index: indexPath.row)
-            fItem.checked = !fItem.checked
+            if fItem.checked || fData.canCheckMore() {
+                fItem.checked = !fItem.checked
+            }
             tableView.reloadRows(at: [indexPath], with: .none)
+        }
+    }
+    
+    func receiveData(filterData: FilterData, goAhead: Bool) {
+        fData = filterData
+        if goAhead {
+             performSegue(withIdentifier: "foodtofilter", sender: self)
         }
     }
     

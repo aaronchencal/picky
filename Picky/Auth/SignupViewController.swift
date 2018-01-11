@@ -12,12 +12,15 @@ import GoogleSignIn
 
 class SignupViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet var signupView: UIView!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
 
     private var googleDelegate : GoogleDelegate!
     
     @IBAction func signup(_ sender: UIButton) {
+      
         guard let estring = emailField.text else {
             
             return
@@ -26,8 +29,21 @@ class SignupViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
             
             return
         }
-        
+        spinner.isHidden = false
+        spinner.startAnimating()
+        for view in self.signupView.subviews {
+            if view.tag == 0 {
+                view.isHidden = true
+            }
+        }
         Auth.auth().createUser(withEmail: estring, password: pstring) { (user, error) in
+            self.spinner.isHidden = true
+            self.spinner.stopAnimating()
+            for view in self.signupView.subviews {
+                if view.tag == 0 {
+                    view.isHidden = false
+                }
+            }
             if let err = error as NSError? {
                 guard let err = AuthErrorCode(rawValue: err.code) else {
                     print("Unknown error")
@@ -54,7 +70,8 @@ class SignupViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        googleDelegate = GoogleDelegate()
+        spinner.isHidden = true
+        googleDelegate = GoogleDelegate(view: signupView, spinner: spinner)
         GIDSignIn.sharedInstance().delegate = googleDelegate
         GIDSignIn.sharedInstance().uiDelegate = self
         emailField.useUnderline()

@@ -115,29 +115,33 @@ class FilterData {
         return data[index]
     }
     
-    func checkAll() {
+    func uncheckAll() {
         for item in data {
-            item.checked = true
+            item.checked = false
         }
     }
 
-    func load(completion: @escaping () -> Void) {
+    func load(completion: @escaping (_: Bool) -> Void) {
         let user = AppDelegate.currentUser!
+        var hadRestaurants = true
         databaseRef.child("users").child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             if snapshot.exists() {
                 let value = snapshot.value as! NSDictionary
                 self.isDriving = (value["isdriving"] as! Int) == 1 ? true : false
-                let restaurants = value["restaurants"] as! NSArray
                 let pric = (value["price"] as! Int)
-                self.checkAll()
-                for item in self.data {
-                    for rest in restaurants {
-                        if item.name == rest as! String{
-                            item.checked = false
-                            break
+                if let restaurants = value["restaurants"] as? NSArray {
+                    self.uncheckAll()
+                    for item in self.data {
+                        for rest in restaurants {
+                            if item.name == rest as! String{
+                                item.checked = true
+                                break
+                            }
                         }
                     }
+                } else {
+                    hadRestaurants = false
                 }
                 switch pric {
                 case 1: self.price = Price.cheap
@@ -146,18 +150,20 @@ class FilterData {
                 default: self.price = Price.cheap
                 }
             }
-            completion()
+            completion(hadRestaurants)
             // ...
         }) { (error) in
-            completion()
+            completion(false)
             print(error.localizedDescription)
         }
     }
+    
+    
     func persist() {
         let user = AppDelegate.currentUser!
         var arr = [String]()
         for filterItem in data {
-            if !filterItem.checked {
+            if filterItem.checked {
                 arr.append(filterItem.name)
             }
         }
@@ -166,5 +172,16 @@ class FilterData {
         self.databaseRef.child("users/\(user.uid)/isdriving").setValue(isDriving ? 1 : 0)
         self.databaseRef.child("users/\(user.uid)/price").setValue(price.rawValue)
     }
+    
+    func canCheckMore() -> Bool {
+        var count = 0
+        for filterItem in data {
+            if filterItem.checked {
+                count += 1
+            }
+        }
+        return count < self.count - 1
+    }
+    
 }
 
