@@ -14,10 +14,9 @@ class PrimaryLoadingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        spinner.isHidden = true
-//        spinner.startAnimating()
-        let when = DispatchTime.now() + 0.05
-        DispatchQueue.main.asyncAfter(deadline: when) {
+//        spinner.isHidden = true
+        spinner.startAnimating()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
             self.performSegue(withIdentifier: "tomain", sender: self)
         }
     }
@@ -25,7 +24,7 @@ class PrimaryLoadingViewController: UIViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        spinner.stopAnimating()
+        spinner.stopAnimating()
     }
  
 

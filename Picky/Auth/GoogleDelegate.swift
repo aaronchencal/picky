@@ -28,11 +28,11 @@ class GoogleDelegate : NSObject, GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         spinner.isHidden = false
         spinner.startAnimating()
-        for view in parentView.subviews {
-            if view.tag == 0 {
-                view.isHidden = true
-            }
-        }
+//        for view in parentView.subviews {
+//            if view.tag == 0 {
+//                view.isHidden = true
+//            }
+//        }
         
         if let error = error {
             self.stopSpinner()
@@ -60,11 +60,11 @@ class GoogleDelegate : NSObject, GIDSignInDelegate {
     func stopSpinner() {
         self.spinner.isHidden = true
         self.spinner.stopAnimating()
-        for view in self.parentView.subviews {
-            if view.tag == 0 {
-                view.isHidden = false
-            }
-        }
+//        for view in self.parentView.subviews {
+//            if view.tag == 0 {
+//                view.isHidden = false
+//            }
+//        }
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {

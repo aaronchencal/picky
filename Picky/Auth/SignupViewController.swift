@@ -31,19 +31,19 @@ class SignupViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
         
         spinner.isHidden = false
         spinner.startAnimating()
-        for view in self.signupView.subviews {
-            if view.tag == 0 {
-                view.isHidden = true
-            }
-        }
+//        for view in self.signupView.subviews {
+//            if view.tag == 0 {
+//                view.isHidden = true
+//            }
+//        }
         Auth.auth().createUser(withEmail: estring!, password: pstring!) { (user, error) in
             self.spinner.isHidden = true
             self.spinner.stopAnimating()
-            for view in self.signupView.subviews {
-                if view.tag == 0 {
-                    view.isHidden = false
-                }
-            }
+//            for view in self.signupView.subviews {
+//                if view.tag == 0 {
+//                    view.isHidden = false
+//                }
+//            }
             if let err = error as NSError? {
                 guard let err = AuthErrorCode(rawValue: err.code) else {
                     self.errorLabel.text = "Unknown error signing up"

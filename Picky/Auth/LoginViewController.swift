@@ -32,19 +32,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
         }
         actIndicator.isHidden = false
         actIndicator.startAnimating()
-        for view in loginView.subviews {
-            if view.tag == 0 {
-                view.isHidden = true
-            }
-        }
+//        for view in loginView.subviews {
+//            if view.tag == 0 {
+//                view.isHidden = true
+//            }
+//        }
         Auth.auth().signIn(withEmail: estring!, password: pstring!) { (user, error) in
             self.actIndicator.isHidden = true
             self.actIndicator.stopAnimating()
-            for view in self.loginView.subviews {
-                if view.tag == 0 {
-                    view.isHidden = false
-                }
-            }
+//            for view in self.loginView.subviews {
+//                if view.tag == 0 {
+//                    view.isHidden = false
+//                }
+//            }
             if let err = error as NSError? {
                 guard let err = AuthErrorCode(rawValue: err.code) else {
                     self.errorLabel.text = "Unknown error logging in"
