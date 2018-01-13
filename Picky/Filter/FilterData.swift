@@ -20,6 +20,8 @@ class FilterItem {
     var checked = false
     var name = "placeholder"
     
+    var image : UIImage!
+    
     init(n : String) {
         name = n
     }
@@ -122,6 +124,7 @@ class FilterData {
     }
 
     func load(completion: @escaping (_: Bool) -> Void) {
+        
         let user = AppDelegate.currentUser!
         var hadRestaurants = false
         databaseRef.child("users").child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in

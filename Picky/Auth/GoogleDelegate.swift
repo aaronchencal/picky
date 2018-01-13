@@ -34,7 +34,7 @@ class GoogleDelegate : NSObject, GIDSignInDelegate {
 //            }
 //        }
         
-        if let error = error {
+        if error != nil {
             self.stopSpinner()
             return
         }
@@ -48,10 +48,6 @@ class GoogleDelegate : NSObject, GIDSignInDelegate {
                                                        accessToken: authentication.accessToken)
         Auth.auth().signIn(with: credential) { (user, errors) in
             self.stopSpinner()
-            if let error = error {
-                // ...
-                return
-            }
             print("signed in")
         }
         
