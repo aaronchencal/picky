@@ -12,6 +12,7 @@ import GoogleSignIn
 
 class SignupViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
     
+    @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet var signupView: UIView!
     @IBOutlet weak var emailField: UITextField!
@@ -21,14 +22,13 @@ class SignupViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
     
     @IBAction func signup(_ sender: UIButton) {
       
-        guard let estring = emailField.text else {
-            
+        let estring = emailField.text
+        let pstring = passwordField.text
+        
+        if !verifyEmail(emailString: estring) || !verifyPassword(passwordString: pstring) {
             return
         }
-        guard let pstring = passwordField.text else {
-            
-            return
-        }
+        
         spinner.isHidden = false
         spinner.startAnimating()
         for view in self.signupView.subviews {
@@ -36,7 +36,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
                 view.isHidden = true
             }
         }
-        Auth.auth().createUser(withEmail: estring, password: pstring) { (user, error) in
+        Auth.auth().createUser(withEmail: estring!, password: pstring!) { (user, error) in
             self.spinner.isHidden = true
             self.spinner.stopAnimating()
             for view in self.signupView.subviews {
@@ -46,31 +46,47 @@ class SignupViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
             }
             if let err = error as NSError? {
                 guard let err = AuthErrorCode(rawValue: err.code) else {
-                    print("Unknown error")
+                    self.errorLabel.text = "Unknown error signing up"
                     return
                 }
                 switch err {
                 case .invalidEmail:
-                    print("invalid email")
+                    self.errorLabel.text = "Invalid email"
                 default:
-                    print("Firebase error you didn't handle: \(error!.localizedDescription)")
+                    self.errorLabel.text = "Invalid email"
                 }
             } else {
                 //login successful
+                
             }
         }
     }
     
-    func verifyEmail(emailString : String) -> Bool {
+    func verifyEmail(emailString : String?) -> Bool {
+        guard let emailString = emailString else {
+            return false
+        }
+        if emailString == "" {
+            self.errorLabel.text = "Please enter an email"
+            return false
+        }
         return true
     }
-    func verifyPassword(passwordString: String) -> Bool {
+    func verifyPassword(passwordString: String?) -> Bool {
+        guard let passwordString = passwordString else {
+            return false
+        }
+        if passwordString.count < 6 {
+            self.errorLabel.text = "Password too short!"
+            return false
+        }
         return true
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         spinner.isHidden = true
+        errorLabel.text = ""
         googleDelegate = GoogleDelegate(view: signupView, spinner: spinner)
         GIDSignIn.sharedInstance().delegate = googleDelegate
         GIDSignIn.sharedInstance().uiDelegate = self

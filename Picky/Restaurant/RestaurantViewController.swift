@@ -22,7 +22,8 @@ class RestaurantViewController: UIViewController {
         """
         name: \(yData.name)\n
         place: \(yData.location.display_address)\n
-        rating: \(yData.rating)
+        rating: \(yData.rating)\n
+        distance: \(yData.distance)
         """
     }
 

@@ -20,6 +20,7 @@ class YelpData {
         let coordinates: Coordinates
         let rating: Double
         let price: String
+        let distance: Double
         let review_count: Int
         struct Location: Codable {
             let display_address: [String]

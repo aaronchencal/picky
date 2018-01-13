@@ -23,8 +23,10 @@ class LoadingViewController: UIViewController {
         data.load { result in
             self.goAhead = result
             self.actIndicator.stopAnimating()
-            self.performSegue(withIdentifier: "nav", sender: self)
-    
+            let when = DispatchTime.now() + 0.1
+            DispatchQueue.main.asyncAfter(deadline: when) {
+                self.performSegue(withIdentifier: "nav", sender: self)
+            }
         }
     }
 

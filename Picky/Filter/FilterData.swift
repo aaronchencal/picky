@@ -158,17 +158,6 @@ class FilterData {
         }
     }
     
-    func persistRestaurants() {
-        let user = AppDelegate.currentUser!
-        var arr = [String]()
-        for filterItem in data {
-            if filterItem.checked {
-                arr.append(filterItem.name)
-            }
-        }
-        self.databaseRef.child("users/\(user.uid)/restaurants").setValue(arr)
-    }
-    
     func persist() {
         let user = AppDelegate.currentUser!
         var arr = [String]()

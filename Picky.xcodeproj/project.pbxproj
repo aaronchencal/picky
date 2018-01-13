@@ -28,6 +28,7 @@
 		A7E339041FEDFAF60095C913 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7E339021FEDFAF60095C913 /* Main.storyboard */; };
 		A7E339061FEDFAF60095C913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7E339051FEDFAF60095C913 /* Assets.xcassets */; };
 		A7E339091FEDFAF60095C913 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7E339071FEDFAF60095C913 /* LaunchScreen.storyboard */; };
+		A7E727AF20097E87002B8D18 /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E727AE20097E87002B8D18 /* FoodTableViewCell.swift */; };
 		A7EDF52A1FFCAF87008F99E5 /* YelpData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EDF5291FFCAF87008F99E5 /* YelpData.swift */; };
 		B56A7DA11BE08529BAE0354A /* Pods_Picky.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1303C1B20B31566A3CCE66FB /* Pods_Picky.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 		A7E339051FEDFAF60095C913 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7E339081FEDFAF60095C913 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7E3390A1FEDFAF60095C913 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7E727AE20097E87002B8D18 /* FoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
 		A7EDF5291FFCAF87008F99E5 /* YelpData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +102,7 @@
 		A7313B1B1FF744FC00C35460 /* Filter */ = {
 			isa = PBXGroup;
 			children = (
+				A7E727AE20097E87002B8D18 /* FoodTableViewCell.swift */,
 				A7313B1C1FF7455E00C35460 /* FoodTableViewController.swift */,
 				A7BC05A71FF882C600905C89 /* FilterData.swift */,
 				A7BC05A91FF8A93000905C89 /* PickyViewController.swift */,
@@ -316,6 +319,7 @@
 				A7E339011FEDFAF60095C913 /* LaunchViewController.swift in Sources */,
 				A7A7970C20071B86009199E4 /* PrimaryLoadingViewController.swift in Sources */,
 				A7313B1D1FF7455E00C35460 /* FoodTableViewController.swift in Sources */,
+				A7E727AF20097E87002B8D18 /* FoodTableViewCell.swift in Sources */,
 				A7BC05A81FF882C600905C89 /* FilterData.swift in Sources */,
 				A78E59BA20034604000793A3 /* LoadingViewController.swift in Sources */,
 				A75E20591FF75A5300524EC5 /* GoogleDelegate.swift in Sources */,

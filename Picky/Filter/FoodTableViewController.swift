@@ -14,13 +14,6 @@ class FoodTableViewController: UITableViewController {
     
     var fData : FilterData!
     
-    @IBAction func didPressFinished(_ sender: UIBarButtonItem) {
-        sender.title = "ff"
-        sender.title = "Done"
-        fData.persistRestaurants()
-        performSegue(withIdentifier: "foodtofilter", sender: self)
-        
-    }
     @IBAction func logOut(_ sender: UIBarButtonItem) {
         let firebaseAuth = Auth.auth()
         do {
@@ -53,18 +46,33 @@ class FoodTableViewController: UITableViewController {
         return fData.count
     }
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 85
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "filterCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "filterCell", for: indexPath) as! FoodTableViewCell
         let fItem = fData.getFilterItemAt(index: indexPath.row)
-        cell.textLabel?.text = fItem.name
+        cell.myLabel.text = fItem.name
+        let myImage = UIImage(named: "\(fItem.name)")
+        if let myImage = myImage {
+            let size = CGSize(width: cell.bounds.width * 1.25, height: cell.bounds.height * 1.25)
+            let newImage = myImage.resize(newSize: size)
+            cell.myImageView.image = newImage
+        }
         if fItem.checked {
-            cell.textLabel?.textColor = UIColor.lightGray
-            let attritext = NSMutableAttributedString(string: (cell.textLabel?.text)!)
+            cell.myLabel.textColor = UIColor.black
+            let attritext = NSMutableAttributedString(string: (cell.myLabel?.text)!)
             attritext.addAttribute(.strikethroughStyle, value: 2, range: NSMakeRange(0, attritext.length))
-            cell.textLabel?.attributedText = attritext
+            cell.myLabel.attributedText = attritext
+            cell.myImageView.alpha = 0.5
+            cell.myLabel.layer.shadowOpacity = 0
         } else {
-            cell.textLabel?.textColor = UIColor.black
+            cell.myLabel.textColor = UIColor.white
+            cell.myImageView.alpha = 1
+            cell.myLabel.layer.shadowOpacity = 0.95
+            cell.myLabel.layer.shadowColor = UIColor.black.cgColor
+            cell.myLabel.layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
         }
         return cell
     }
@@ -91,6 +99,7 @@ class FoodTableViewController: UITableViewController {
     //MARK: Segue
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        fData.persist()
         if let dvc = segue.destination as? PickyViewController {
             dvc.receiveData(data: fData)
         }

@@ -13,6 +13,7 @@ import GoogleSignIn
 
 class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
     
+    @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var actIndicator: UIActivityIndicatorView!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -23,12 +24,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
     
     
     @IBAction func login(_ sender: UIButton) {
-        guard let estring = emailField.text else {
-            
-            return
-        }
-        guard let pstring = passwordField.text else {
-            
+        let estring = emailField.text
+        let pstring = passwordField.text
+        
+        if !verifyEmail(emailString: estring) || !verifyPassword(passwordString: pstring) {
             return
         }
         actIndicator.isHidden = false
@@ -38,7 +37,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
                 view.isHidden = true
             }
         }
-        Auth.auth().signIn(withEmail: estring, password: pstring) { (user, error) in
+        Auth.auth().signIn(withEmail: estring!, password: pstring!) { (user, error) in
             self.actIndicator.isHidden = true
             self.actIndicator.stopAnimating()
             for view in self.loginView.subviews {
@@ -48,14 +47,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
             }
             if let err = error as NSError? {
                 guard let err = AuthErrorCode(rawValue: err.code) else {
-                    print("Unknown error logging in")
+                    self.errorLabel.text = "Unknown error logging in"
                     return
                 }
                 switch err {
                 case .invalidEmail:
-                    print("invalid email")
+                    self.errorLabel.text = "Invalid email"
                 default:
-                    print("Firebase error you didn't handle")
+                    self.errorLabel.text = "Invalid email"
                 }
             } else {
                 //login successful
@@ -67,6 +66,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        errorLabel.text = ""
         actIndicator.isHidden = true
         googleDelegate = GoogleDelegate(view: loginView, spinner: actIndicator)
         GIDSignIn.sharedInstance().delegate = googleDelegate
@@ -76,10 +76,24 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
     }
     
     
-    func verifyEmail(emailString : String) -> Bool {
+    func verifyEmail(emailString : String?) -> Bool {
+        guard let emailString = emailString else {
+            return false
+        }
+        if emailString == "" {
+             self.errorLabel.text = "Please enter an email"
+            return false
+        }
         return true
     }
-    func verifyPassword(passwordString: String) -> Bool {
+    func verifyPassword(passwordString: String?) -> Bool {
+        guard let passwordString = passwordString else {
+            return false
+        }
+        if passwordString.count < 6 {
+            self.errorLabel.text = "Password too short!"
+            return false
+        }
         return true
     }
   
