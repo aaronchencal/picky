@@ -123,11 +123,14 @@ class FilterData {
         }
     }
 
+    private var finishedLoad = false
+    
     func load(completion: @escaping (_: Bool) -> Void) {
-        
         let user = AppDelegate.currentUser!
         var hadRestaurants = false
+        
         databaseRef.child("users").child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            self.finishedLoad = true
             // Get user value
             if snapshot.exists() {
                 let value = snapshot.value as! NSDictionary
@@ -159,6 +162,12 @@ class FilterData {
             completion(false)
             print(error.localizedDescription)
         }
+        Timer.scheduledTimer(withTimeInterval: TimeInterval(3.0), repeats: false) { timer in
+            if !self.finishedLoad {
+                completion(false)
+            }
+        }
+      
     }
     
     func persist() {
