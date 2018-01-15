@@ -16,6 +16,8 @@ class HighlightButton: UIButton {
     
     override func awakeFromNib() {
         backgroundColor = UIColor.clear
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = 5
     }
     
     func turnOff() {

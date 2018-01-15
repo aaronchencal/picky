@@ -23,6 +23,8 @@ class PickyViewController: UIViewController, CLLocationManagerDelegate {
     
     private var restData : YelpData.Restaurant!
     
+    private var passImage : UIImage!
+    
     @IBOutlet weak var pickButton: UIButton!
     
     @IBAction func pressedPick(_ sender: UIButton) {
@@ -41,7 +43,18 @@ class PickyViewController: UIViewController, CLLocationManagerDelegate {
         actIndicator.stopAnimating()
         if success {
             restData = rest
-            performSegue(withIdentifier: "pickytorestaurant", sender: self)
+            let url = URL(string: restData.image_url)
+            DispatchQueue.global().async {
+                do {
+                    let data = try Data(contentsOf: url!)
+                    DispatchQueue.main.async {
+                        self.passImage = UIImage(data: data)
+                        self.performSegue(withIdentifier: "pickytorestaurant", sender: self)
+                    }
+                } catch {
+                    print("Line 54 of PickyViewController: \(error)")
+                }
+            }
         } else {
             // error message
         }
@@ -49,7 +62,7 @@ class PickyViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        navItem.hidesBackButton = true
-        
+        self.navigationController?.navigationBar.isHidden = false
         pickyView.setDefaults(data: fData)
         locationManager.delegate = self
         
@@ -87,6 +100,7 @@ class PickyViewController: UIViewController, CLLocationManagerDelegate {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let dvc = segue.destination as? RestaurantViewController {
+            dvc.myImage = self.passImage
             dvc.receiveData(data: restData)
         }
     }

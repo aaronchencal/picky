@@ -33,10 +33,10 @@ class PickyView: UIView {
     }
     
     func setDefaults(data: FilterData) {
-        walkButton.color = UIColor.red
-        driveButton.color = UIColor.red
+        walkButton.color = UIColor.init(red: 0, green: 0, blue: 1, alpha: 0.5)
+        driveButton.color = walkButton.color
         for button in priceButtons {
-            button.color = UIColor.green
+            button.color = UIColor.init(red: 0, green: 1, blue: 0, alpha: 0.5)
         }
         data.isDriving ? driveButton.turnOn() :  walkButton.turnOn()
         for button in priceButtons {

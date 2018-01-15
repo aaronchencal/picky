@@ -470,18 +470,6 @@
                                     <action selector="didPressPriceButton:" destination="3Jg-a9-lsB" eventType="touchUpInside" id="BQa-V3-xcv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAV-1f-NBW">
-                                <rect key="frame" x="76" y="459" width="222" height="88"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="22"/>
-                                <state key="normal" title="Pick!">
-                                    <color key="titleColor" red="0.98942453904904948" green="1" blue="0.94453406017841635" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="pressedPick:" destination="dEx-Q1-qy0" eventType="touchUpInside" id="FaM-dG-1HM"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIT-7s-wkw">
                                 <rect key="frame" x="21" y="158" width="198" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -517,8 +505,26 @@
                                     <action selector="didPressPriceButton:" destination="3Jg-a9-lsB" eventType="touchUpInside" id="rbO-fN-7Mr"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAV-1f-NBW">
+                                <rect key="frame" x="76" y="459" width="222" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.0093617555427757404" blue="0.0" alpha="0.66034353595890416" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="22"/>
+                                <state key="normal" title="Pick!">
+                                    <color key="titleColor" red="0.98942453904904948" green="1" blue="0.94453406017841635" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pressedPick:" destination="dEx-Q1-qy0" eventType="touchUpInside" id="FaM-dG-1HM"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.79127217719346687" green="0.89829266420827336" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="CAx-Rn-rT5"/>
                         <connections>
                             <outlet property="driveButton" destination="LWF-nI-SXM" id="8Dj-Y3-jrB"/>
@@ -552,24 +558,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="label here" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0V-jM-gVD">
-                                <rect key="frame" x="68" y="169" width="238" height="328"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kkq-2t-nAC">
+                                <rect key="frame" x="0.0" y="64" width="375" height="200"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fat Slice" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0V-jM-gVD" userLabel="title label">
+                                <rect key="frame" x="37.5" y="298.5" width="300" height="36"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pizza" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Daq-Fu-kx3">
+                                <rect key="frame" x="37" y="351" width="150" height="20"/>
                                 <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="Kal-3d-Lad">
+                                <rect key="frame" x="187" y="352" width="102" height="18"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.93933113339635821" green="1" blue="0.93267953396933623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Daq-Fu-kx3" firstAttribute="width" secondItem="F0V-jM-gVD" secondAttribute="width" multiplier="0.5" id="4K7-Hi-TPE"/>
+                            <constraint firstItem="Kal-3d-Lad" firstAttribute="leading" secondItem="Daq-Fu-kx3" secondAttribute="trailing" id="AIS-vh-gh6"/>
+                            <constraint firstItem="kkq-2t-nAC" firstAttribute="centerX" secondItem="sTL-zw-NRM" secondAttribute="centerX" id="BhW-lD-mto"/>
+                            <constraint firstItem="kkq-2t-nAC" firstAttribute="height" secondItem="UEU-3w-x7a" secondAttribute="height" multiplier="0.3" id="H1l-Y0-DBB"/>
+                            <constraint firstItem="kkq-2t-nAC" firstAttribute="top" secondItem="sTL-zw-NRM" secondAttribute="top" id="HUe-vd-f2a"/>
+                            <constraint firstItem="F0V-jM-gVD" firstAttribute="centerX" secondItem="sTL-zw-NRM" secondAttribute="centerX" id="HvR-wI-RHy"/>
+                            <constraint firstItem="Daq-Fu-kx3" firstAttribute="leading" secondItem="F0V-jM-gVD" secondAttribute="leading" id="NSL-dx-tTl"/>
+                            <constraint firstItem="F0V-jM-gVD" firstAttribute="width" secondItem="UEU-3w-x7a" secondAttribute="width" multiplier="0.8" id="dPa-G2-hoD"/>
+                            <constraint firstItem="F0V-jM-gVD" firstAttribute="top" secondItem="kkq-2t-nAC" secondAttribute="bottom" multiplier="1.1" constant="8" symbolic="YES" id="dZx-XM-qLd"/>
+                            <constraint firstItem="Daq-Fu-kx3" firstAttribute="top" secondItem="F0V-jM-gVD" secondAttribute="bottom" multiplier="1.05" id="h9a-Nh-8El"/>
+                            <constraint firstItem="kkq-2t-nAC" firstAttribute="width" secondItem="UEU-3w-x7a" secondAttribute="width" id="iCW-RY-zT0"/>
+                            <constraint firstItem="Kal-3d-Lad" firstAttribute="centerY" secondItem="Daq-Fu-kx3" secondAttribute="centerY" id="jeW-fb-WJH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="sTL-zw-NRM"/>
                     </view>
                     <connections>
-                        <outlet property="tempLabel" destination="F0V-jM-gVD" id="VYM-ar-gpL"/>
+                        <outlet property="categoryLabel" destination="Daq-Fu-kx3" id="vnC-Nf-QL9"/>
+                        <outlet property="myImageView" destination="kkq-2t-nAC" id="NWL-0Y-Tl0"/>
+                        <outlet property="ratingsView" destination="Kal-3d-Lad" id="Wtu-tL-YDR"/>
+                        <outlet property="titleLabel" destination="F0V-jM-gVD" id="1fT-U4-CNS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kpb-Yo-PdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5553" y="-369"/>
+            <point key="canvasLocation" x="5552.8000000000002" y="-369.26536731634184"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Xxy-92-vp7">
@@ -686,6 +720,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="0" width="102" height="18"/>
         <image name="launch" width="4623" height="6664"/>
     </resources>
     <inferredMetricsTieBreakers>
