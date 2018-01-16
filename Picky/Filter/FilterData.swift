@@ -31,7 +31,9 @@ class FilterData {
     
     var databaseRef: DatabaseReference!
     
-    var yelpRestaurants = ["japanese", "american", "mexican", "chinese"]
+    var yelpRestaurants = [ "tradamerican", "chinese", "hotdogs", "french","indpak", "italian", "japanese", "korean", "mediterranean", "mexican", "poutineries", "sandwiches", "seafood", "soulfood", "spanish", "steak", "taiwanese", "vietnamese"]
+    
+    var names = [ "tradamerican" : "American", "chinese" : "Chinese", "hotdogs" : "Fast Food", "french" : "French" ,"indpak" : "Indian", "italian" : "Italian", "japanese" : "Japanese", "korean" : "Korean", "mediterranean" : "Mediterranean", "mexican" : "Mexican", "poutineries" : "Poutine" , "sandwiches" : "Sandwiches", "seafood" : "Seafood", "soulfood" : "Soul Food", "spanish" : "Spanish", "steak" : "Steak", "taiwanese" : "Taiwanese", "vietnamese" : "Vietnamese" ]
     
     var data = [FilterItem]()
     

@@ -53,7 +53,7 @@ class FoodTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "filterCell", for: indexPath) as! FoodTableViewCell
         let fItem = fData.getFilterItemAt(index: indexPath.row)
-        cell.myLabel.text = fItem.name
+        cell.myLabel.text = fData.names[fItem.name]
         let myImage = UIImage(named: "\(fItem.name)")
         if let myImage = myImage {
             let size = CGSize(width: cell.bounds.width * 1.25, height: cell.bounds.height * 1.25)
@@ -70,9 +70,9 @@ class FoodTableViewController: UITableViewController {
         } else {
             cell.myLabel.textColor = UIColor.white
             cell.myImageView.alpha = 1
-            cell.myLabel.layer.shadowOpacity = 0.95
+            cell.myLabel.layer.shadowOpacity = 1
             cell.myLabel.layer.shadowColor = UIColor.black.cgColor
-            cell.myLabel.layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
+            cell.myLabel.layer.shadowOffset = CGSize(width: 0.7, height: 0.7)
         }
         return cell
     }
