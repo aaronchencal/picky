@@ -24,6 +24,9 @@ class FilterItem {
     
     init(n : String) {
         name = n
+        image = UIImage(named: n)!.resize(newSize: CGSize(width: UIScreen.main.bounds.width
+, height: 85))
+        
     }
 }
 

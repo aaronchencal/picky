@@ -54,12 +54,7 @@ class FoodTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "filterCell", for: indexPath) as! FoodTableViewCell
         let fItem = fData.getFilterItemAt(index: indexPath.row)
         cell.myLabel.text = fData.names[fItem.name]
-        let myImage = UIImage(named: "\(fItem.name)")
-        if let myImage = myImage {
-            let size = CGSize(width: cell.bounds.width * 1.25, height: cell.bounds.height * 1.25)
-            let newImage = myImage.resize(newSize: size)
-            cell.myImageView.image = newImage
-        }
+        cell.myImageView.image = fItem.image
         if fItem.checked {
             cell.myLabel.textColor = UIColor.black
             let attritext = NSMutableAttributedString(string: (cell.myLabel?.text)!)

@@ -12,6 +12,8 @@ class RestaurantViewController: UIViewController {
 
     private var yData: YelpData.Restaurant!
     
+    @IBOutlet weak var ratingslabel: UILabel!
+    
     @IBOutlet weak var myImageView: UIImageView!
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -35,6 +37,9 @@ class RestaurantViewController: UIViewController {
         titleLabel.text = yData.name
         categoryLabel.text = yData.categories.first?.title ?? "Miscellaneous"
         ratingsView.image = UIImage(named: "\(yData.rating)")
+        
+        ratingslabel.text = "\(yData.review_count)"
+        
 //        tempLabel.text =
 //        """
 //        name: \(yData.name)\n

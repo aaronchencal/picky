@@ -11,6 +11,10 @@ import Alamofire
 
 class YelpData {
     
+    func miles(meters: Double) -> Double {
+        return ((meters / 1000.0) * 0.621371).truncate(places: 2)
+    }
+    
     struct Restaurant: Codable {
         let name: String
         struct Coordinates: Codable {

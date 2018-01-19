@@ -561,36 +561,59 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kkq-2t-nAC">
                                 <rect key="frame" x="0.0" y="64" width="375" height="200"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fat Slice" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0V-jM-gVD" userLabel="title label">
-                                <rect key="frame" x="37.5" y="298.5" width="300" height="36"/>
-                                <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pizza" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Daq-Fu-kx3">
-                                <rect key="frame" x="37" y="351" width="150" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pizza" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Daq-Fu-kx3">
+                                <rect key="frame" x="17.5" y="316.5" width="41" height="20"/>
                                 <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="Kal-3d-Lad">
-                                <rect key="frame" x="187" y="352" width="102" height="18"/>
+                                <rect key="frame" x="257" y="290.5" width="102" height="18"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="14314" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dye-IA-Khj">
+                                <rect key="frame" x="312" y="311.5" width="40" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="BG9-QW-IeU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0n-wc-Fk3">
+                                <rect key="frame" x="306" y="329.5" width="53" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="76x-21-yNy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fat Slice" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="F0V-jM-gVD" userLabel="title label">
+                                <rect key="frame" x="17.5" y="277" width="187.5" height="36"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.93933113339635821" green="1" blue="0.93267953396933623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Daq-Fu-kx3" firstAttribute="width" secondItem="F0V-jM-gVD" secondAttribute="width" multiplier="0.5" id="4K7-Hi-TPE"/>
-                            <constraint firstItem="Kal-3d-Lad" firstAttribute="leading" secondItem="Daq-Fu-kx3" secondAttribute="trailing" id="AIS-vh-gh6"/>
+                            <constraint firstItem="Kal-3d-Lad" firstAttribute="top" secondItem="kkq-2t-nAC" secondAttribute="bottom" multiplier="1.1" id="1Gg-JB-CB4"/>
+                            <constraint firstItem="F0V-jM-gVD" firstAttribute="width" secondItem="UEU-3w-x7a" secondAttribute="width" multiplier="0.5" id="9Lb-1f-c0p"/>
                             <constraint firstItem="kkq-2t-nAC" firstAttribute="centerX" secondItem="sTL-zw-NRM" secondAttribute="centerX" id="BhW-lD-mto"/>
                             <constraint firstItem="kkq-2t-nAC" firstAttribute="height" secondItem="UEU-3w-x7a" secondAttribute="height" multiplier="0.3" id="H1l-Y0-DBB"/>
                             <constraint firstItem="kkq-2t-nAC" firstAttribute="top" secondItem="sTL-zw-NRM" secondAttribute="top" id="HUe-vd-f2a"/>
-                            <constraint firstItem="F0V-jM-gVD" firstAttribute="centerX" secondItem="sTL-zw-NRM" secondAttribute="centerX" id="HvR-wI-RHy"/>
-                            <constraint firstItem="Daq-Fu-kx3" firstAttribute="leading" secondItem="F0V-jM-gVD" secondAttribute="leading" id="NSL-dx-tTl"/>
-                            <constraint firstItem="F0V-jM-gVD" firstAttribute="width" secondItem="UEU-3w-x7a" secondAttribute="width" multiplier="0.8" id="dPa-G2-hoD"/>
-                            <constraint firstItem="F0V-jM-gVD" firstAttribute="top" secondItem="kkq-2t-nAC" secondAttribute="bottom" multiplier="1.1" constant="8" symbolic="YES" id="dZx-XM-qLd"/>
-                            <constraint firstItem="Daq-Fu-kx3" firstAttribute="top" secondItem="F0V-jM-gVD" secondAttribute="bottom" multiplier="1.05" id="h9a-Nh-8El"/>
+                            <constraint firstItem="F0V-jM-gVD" firstAttribute="top" secondItem="kkq-2t-nAC" secondAttribute="bottom" multiplier="1.05" id="O97-Nz-fV1"/>
+                            <constraint firstItem="Z0n-wc-Fk3" firstAttribute="top" secondItem="Dye-IA-Khj" secondAttribute="bottom" id="RJg-to-qRh"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Daq-Fu-kx3" secondAttribute="trailing" constant="20" symbolic="YES" id="U3z-AQ-KaP"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="F0V-jM-gVD" secondAttribute="trailing" constant="20" symbolic="YES" id="aga-XC-4Eu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Z0n-wc-Fk3" secondAttribute="trailing" id="ccZ-w8-H57"/>
+                            <constraint firstItem="F0V-jM-gVD" firstAttribute="leading" secondItem="UEU-3w-x7a" secondAttribute="leadingMargin" multiplier="1.1" id="hvc-UW-CzS"/>
                             <constraint firstItem="kkq-2t-nAC" firstAttribute="width" secondItem="UEU-3w-x7a" secondAttribute="width" id="iCW-RY-zT0"/>
-                            <constraint firstItem="Kal-3d-Lad" firstAttribute="centerY" secondItem="Daq-Fu-kx3" secondAttribute="centerY" id="jeW-fb-WJH"/>
+                            <constraint firstItem="Daq-Fu-kx3" firstAttribute="top" secondItem="F0V-jM-gVD" secondAttribute="bottom" multiplier="1.01" id="uy8-yi-BxT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Kal-3d-Lad" secondAttribute="trailing" id="vwu-7U-mF9"/>
+                            <constraint firstItem="Dye-IA-Khj" firstAttribute="centerX" secondItem="Z0n-wc-Fk3" secondAttribute="centerX" id="xAc-Wd-Clg"/>
+                            <constraint firstItem="Dye-IA-Khj" firstAttribute="top" secondItem="Kal-3d-Lad" secondAttribute="bottom" multiplier="1.01" id="yFT-8l-dSn"/>
+                            <constraint firstItem="Daq-Fu-kx3" firstAttribute="leading" secondItem="F0V-jM-gVD" secondAttribute="leading" id="yeU-xh-cV2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sTL-zw-NRM"/>
                     </view>
@@ -598,6 +621,7 @@
                         <outlet property="categoryLabel" destination="Daq-Fu-kx3" id="vnC-Nf-QL9"/>
                         <outlet property="myImageView" destination="kkq-2t-nAC" id="NWL-0Y-Tl0"/>
                         <outlet property="ratingsView" destination="Kal-3d-Lad" id="Wtu-tL-YDR"/>
+                        <outlet property="ratingslabel" destination="Dye-IA-Khj" id="RGM-UP-hi3"/>
                         <outlet property="titleLabel" destination="F0V-jM-gVD" id="1fT-U4-CNS"/>
                     </connections>
                 </viewController>
