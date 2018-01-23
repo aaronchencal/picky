@@ -27,11 +27,13 @@ class RestaurantViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        if let myImage = myImage {
-            let size = CGSize(width: myImageView.bounds.width * 1.25, height: myImageView.bounds.height * 1.25)
+        if let myImage = self.myImage {
+            let aratio = myImage.size.height / myImage.size.width
+            let size = CGSize(width: self.myImageView.bounds.width * 1.25, height: self.myImageView.bounds.width * 1.25 * aratio )
+            
             self.myImage = myImage.resize(newSize: size)
         }
+        // Do any additional setup after loading the view.
         myImageView.image = myImage
         self.navigationItem.title = yData.name
         titleLabel.text = yData.name

@@ -39,8 +39,8 @@ class PickyViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func goSegueCompletion(rest: YelpData.Restaurant?, success: Bool) {
+        print("goseguecompletion called")
         pickButton.isEnabled = true
-        actIndicator.stopAnimating()
         if success {
             restData = rest
             let url = URL(string: restData.image_url)
@@ -49,6 +49,7 @@ class PickyViewController: UIViewController, CLLocationManagerDelegate {
                     let data = try Data(contentsOf: url!)
                     DispatchQueue.main.async {
                         self.passImage = UIImage(data: data)
+                        self.actIndicator.stopAnimating()
                         self.performSegue(withIdentifier: "pickytorestaurant", sender: self)
                     }
                 } catch {

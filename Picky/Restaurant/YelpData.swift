@@ -53,8 +53,9 @@ class YelpData {
                     } catch {
                         print("Error: \(error)")
                     }
+                } else {
+                    completion(nil, false)
                 }
-                completion(nil, false)
         }
     }
     
