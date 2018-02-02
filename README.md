@@ -3,6 +3,7 @@
 Picky is an iOS application that solves the classic problem of not being able to decide on where to eat! With a few filters of food you hate,
 price, and distance, it uses Yelp's API to randomly pick you somewhere to eat.
 
+You can see a demo here: https://youtu.be/07awjGBmc0s
 
 ### What is this repository for? Why can't I just download your app on the App Store? ###
 
