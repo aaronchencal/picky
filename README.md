@@ -7,9 +7,8 @@ You can see a demo here: https://youtu.be/07awjGBmc0s
 
 ### What is this repository for? Why can't I just download your app on the App Store? ###
 
-* Picky is still under development, so I use bitbucket as a remote repository.
-* Everything pushed to this repository should be working, so go ahead and give it a try!
-* I expect to release it on the app store sometime in 2018...
+* I no longer use a Mac as my development machine, so Picky never made it to be published on the app store
+* Everything pushed to this repository should be working, so you can still give it a try!
 
 ### How do I get set up? ###
 
